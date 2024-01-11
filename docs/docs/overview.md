@@ -5,70 +5,103 @@ Note: dbverse is still in early development. changes to the below are likely to 
 ## Class Diagram
 ```mermaid
 classDiagram
+direction LR
 
 namespace Data {
-    class sequences{
-        + .bam/sam
-        + .fastq/fasta
-        + .bed 
-        + ...
-    }
 
-    class counts{
-        + .mtx
-        + .csv
-        + .parquet
-        + .hdf5
-        - Matrix::
-        - matrix::
-        - data.frames
+    class tabular{
+        .mtx
+        .csv
+        .parquet
+        .hdf5
+        dgCMatrix
+        data.frames
     }
 
     class geometries{
-        + .shp
-        + .geojson
-        - terra::spatVector
+        .shp
+        .geojson
+        sf::sf
+        terra::spatVector
     }
 
 }
 
 namespace dbverse {
-    class dbSequence {
-        + conn: binary
-        + name: character
-        + value: sequences
-        + type: character
-        - gc_content()
-        - filter_bam()
-        - ...()
+
+    class dbMatrix_lib{
+
     }
 
+    class dbSpatial_lib{
 
+    }
 
+    class dbData_lib{
+
+    }
+
+}
+
+namespace dbData_lib {
+    class dbData {
+        <<base class>>
+        + value: duckdb_table
+        + name: table_name
+        + init: boolean
+        - DBI::listTables()
+        - DBI::writeTables()
+        - DBI::dbDisconnect()
+        - DBI::*()
+    }
+
+}
+
+namespace dbSpatial_lib {
 
     class dbSpatial{
-        + conn: binary
-        + name: character
-        + value: geometries
-        -ST_*()
+    - ST_*(geom) [DuckDB_spatial]
+    }
+    
+    class dbSpatialPoints{
+    - ST_*(geom_point) 
     }
 
-
-
-    class dbMatrix {
-        +conn: binary
-        +name: character
-        +value: counts
-        +dim_names: list
-        +dims: integer
-        -Arith()
-        -...()
+    class dbSpatialPolygons{
+    - ST_*(geom_polygon)
     }
 }
 
-sequences <..> dbSequence
-counts <..> dbMatrix
-geometries <..> dbSpatial
+namespace dbMatrix_lib {
+    class dbMatrix {
+        + dim_names: [enum,enum]
+        + dims: [int, int]
+        + class: "sparse" | "dense"
+        - dbMatrix::*()
+        - dbMatrixStats::*()
+    }
+
+    class dbSparseMatrix{
+
+    }
+
+    class dbDenseMatrix{
+
+    }
+}
+
+
+tabular <..> dbData_lib : read/write
+geometries <..> dbData_lib : read/write
+
+dbData_lib --> dbMatrix_lib
+dbData_lib --> dbSpatial_lib
+
+dbSpatial --> dbSpatialPoints
+dbSpatial --> dbSpatialPolygons
+
+dbMatrix --> dbDenseMatrix
+dbMatrix --> dbSparseMatrix
 ```
 
 ## Description

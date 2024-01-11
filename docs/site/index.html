@@ -153,7 +153,7 @@
     
     
       <div class="md-header__source">
-        <a href="https://github.com/Ed2uiz/dbverse" title="Go to repository" class="md-source" data-md-component="source">
+        <a href="https://github.com/drieslab/dbverse" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
@@ -282,6 +282,23 @@
   
 
       
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="NEWS.md" class="md-tabs__link">
+        
+  
+    
+  
+  News
+
+      </a>
+    </li>
+  
+
+      
     </ul>
   </div>
 </nav>
@@ -316,7 +333,7 @@
   </label>
   
     <div class="md-nav__source">
-      <a href="https://github.com/Ed2uiz/dbverse" title="Go to repository" class="md-source" data-md-component="source">
+      <a href="https://github.com/drieslab/dbverse" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
@@ -490,6 +507,25 @@
   
 
     
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="NEWS.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    News
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -512,36 +548,25 @@
 
 <h1 id="dbverse">dbverse</h1>
 <!-- badges: start -->
-<p><a href="https://lifecycle.r-lib.org/articles/stages.html#experimental"><img alt="Lifecycle: experimental" src="https://img.shields.io/badge/lifecycle-experimental-orange.svg" /></a></p>
+<p><a href="https://lifecycle.r-lib.org/articles/stages.html#experimental"><img alt="Lifecycle:
+experimental" src="https://img.shields.io/badge/lifecycle-experimental-orange.svg" /></a></p>
 <!-- badges: end -->
 
-<p><code>dbverse</code> is a collection of open-source libraries for representing and
-analyzing virtually any omic data in a fast and embeddable database
-powered by DuckDB. On release, <code>dbverse</code> supports three core data types
-commonly used in the omics field including <em>sequences</em> (e.g. bam/SAM,
-fastq/fasta, and more), <em>geometries</em> (e.g. geojson, shp, and more), and
-<em>counts</em> (e.g. sparse/dense matrices, data.frames).</p>
-<p>The goals of <code>dbverse</code> are to:</p>
-<ol>
-<li>eliminate bottlenecks with analyzing large omic data (e.g. system
-    memory constraints, limited access to complex and costly cloud
-    computing infrastructure, etc.)</li>
-<li>enhance scientific reproducibility by providing a common format for
-    representing and analyzing omics data</li>
-<li>enable researchers to perform multi-modal analyses in a variety of
-    languages including SQL, python, R, and more through a common
-    interface. On release, support for R and SQL are available.</li>
-</ol>
-<p><code>dbverse</code> was designed with a bottom-up approach, starting with three
-core data sources commonly used in scientific computing:
-counts/matrices, geometries, and biological sequences. The <code>dbverse</code>
-core libraries can be used individually or together through this package
-for multi-modal analysis. Please visit the <strong>packages</strong> page for
-more details.</p>
+<p>The <code>dbverse</code> is a set of open-source and composable packages for
+larger-than-memory data analysis. The <code>dbverse</code> provides <em>object
+relational mappings</em> for common data objects, including sparse and dense
+matrices, spatial geometries, and others, and is powered by
+<a href="https://duckdb.org/">DuckDB</a>.</p>
+<p>The goal of <code>dbverse</code> is to enable users to analyze larger-than-memory
+data objects using familiar coding syntax and methods provided by
+existing in-memory packages. Please visit the
+<a href="https://drieslab.github.io/dbverse/packages/"><strong>packages</strong></a> page for
+details about each <code>dbverse</code> package.</p>
+<p>Note: the <code>dbverse</code> is currently under active development.</p>
 <h2 id="installation">Installation</h2>
-<p>You can install the development version of dbverse like so:</p>
-<pre><code># install.packages(&quot;pak&quot;, repos = sprintf(&quot;https://r-lib.github.io/p/pak/stable/%s/%s/%s&quot;, .Platform$pkgType, R.Version()$os, R.Version()$arch))
-pak::pak(&quot;ed2uiz/dbverse&quot;)
+<p>You can install the development version of <code>dbverse</code> like so:</p>
+<pre><code class="language-r"># install.packages(&quot;pak&quot;, repos = sprintf(&quot;https://r-lib.github.io/p/pak/stable/%s/%s/%s&quot;, .Platform$pkgType, R.Version()$os, R.Version()$arch))
+pak::pak(&quot;drieslab/dbverse&quot;)
 </code></pre>
 
 
