@@ -1,17 +1,13 @@
 # Core packages
-dbverse consists of three core packages that contain simple classes, generics, and methods for representing abstract data types in a DuckDB database.
+`dbverse` currently consists of four core libraries that contain classes, generics, and methods for representing and analyzing scientific data objects in a `DuckDB` database.
 
-1.  [dbMatrix](https://drieslab.github.io/dbMatrix) - A database backend
-    for counts including sparse/dense matrices and data.frames.
-2.  [dbSpatial](https://drieslab.github.io/dbSpatial) - A database backend
-    for geometries including geojson, shp, and more.
-3.  [dbData](https://drieslab.github.io/dbData) - A lightweight package with
-    specifications for base class of `dbverse` core packages.
-    
+1.  [`{dbMatrix}`](https://drieslab.github.io/dbMatrix) - A library for sparse/dense matrix operations in a database.
+2.  [`{dbSpatial}`](https://drieslab.github.io/dbSpatial) - A library for spatial operations in a database.
+3.  `{dbData}` - A library with specifications for base class of `dbverse`. **In progress**.
+4.  `{dbSequence}` - A library for genomic sequence operations in a database. **In progress**.
 
 # Extensions
-Packages that use core packages.
+R Packages that use `dbverse`. *Want to be added to this list? Please submit an issue or pull request on our Github.*
 
 - [Giotto](https://github.com/drieslab/Giotto)
     - A comprehensive spatial transcriptomic analysis toolbox.
-    - dbverse packages: `dbMatrix` and `dbSpatial`

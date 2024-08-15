@@ -1,109 +1,101 @@
 # dbverse
 
-Note: dbverse is still in early development. changes to the below are likely to occur.
+**Note: `{dbverse}` is in early development. Changes to the below are likely to occur.**
 
 ## Class Diagram
 ```mermaid
 classDiagram
 direction LR
 
-namespace Data {
-
-    class tabular{
+namespace Input_Data {
+    class numerical{
         .mtx
         .csv
         .parquet
-        .hdf5
-        dgCMatrix
-        data.frames
+        dgcMatrix
+        matrix
+        data.frame
+        data.table
     }
 
     class geometries{
-        .shp
-        .geojson
+        50+ spatial file formats
         sf::sf
         terra::spatVector
     }
 
+    class sequences{
+        10+ genomic file formats
+    }
+}
+
+namespace computer {
+    class database
 }
 
 namespace dbverse {
-
     class dbMatrix_lib{
-
+        class dbMatrix
     }
 
     class dbSpatial_lib{
+        class dbSpatial
+    }
 
+    class dbSequence_lib{
+        class dbSequence
     }
 
     class dbData_lib{
-
-    }
-
-}
-
-namespace dbData_lib {
-    class dbData {
-        <<base class>>
-        + value: duckdb_table
-        + name: table_name
-        + init: boolean
-        - DBI::listTables()
-        - DBI::writeTables()
-        - DBI::dbDisconnect()
-        - DBI::*()
-    }
-
-}
-
-namespace dbSpatial_lib {
-
-    class dbSpatial{
-    - ST_*(geom) [DuckDB_spatial]
-    }
-    
-    class dbSpatialPoints{
-    - ST_*(geom_point) 
-    }
-
-    class dbSpatialPolygons{
-    - ST_*(geom_polygon)
+        class dbData
     }
 }
 
 namespace dbMatrix_lib {
     class dbMatrix {
+        + dbData: dbData
         + dim_names: [enum,enum]
         + dims: [int, int]
-        + class: "sparse" | "dense"
-        - dbMatrix::*()
-        - dbMatrixStats::*()
-    }
-
-    class dbSparseMatrix{
-
-    }
-
-    class dbDenseMatrix{
-
+        + class: "dbSparseMatrix" | "dbDenseMatrix"
+        - Arith
+        - Ops
+        - matrix summary functions()
     }
 }
 
+namespace dbSpatial_lib {
+    class dbSpatial{
+        + dbData: dbData
+        - ST_*(geom) [DuckDB Spatial Extension]
+    }
+}
 
-tabular <..> dbData_lib : read/write
-geometries <..> dbData_lib : read/write
+namespace dbSequence_lib {
+    class dbSequence{
+        + dbData: dbData
+    }
+}
 
-dbData_lib --> dbMatrix_lib
-dbData_lib --> dbSpatial_lib
+namespace dbData_lib {
+    class dbData {
+        <<base virtual class>>
+        + value: Input_Data
+        + name: table_name
+        + init: boolean
+        + conn: DuckDB connection
+        - DBI::()
+        - dplyr::()
+    }
+}
 
-dbSpatial --> dbSpatialPoints
-dbSpatial --> dbSpatialPolygons
+numerical <..> dbMatrix_lib : read/write
+geometries <..> dbSpatial_lib : read/write
+sequences <..> dbSequence_lib : read/write
 
-dbMatrix --> dbDenseMatrix
-dbMatrix --> dbSparseMatrix
+dbMatrix_lib --> dbData_lib
+dbSpatial_lib --> dbData_lib
+dbSequence_lib --> dbData_lib
+
+dbData_lib <..> database : connect/disconnect/cache
 ```
-
-## Description
-TODO: More text on the structure of the dbverse ecosystem.
 

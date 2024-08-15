@@ -474,21 +474,18 @@
 
 
 <h1 id="core-packages">Core packages</h1>
-<p>dbverse consists of three core packages that contain simple classes, generics, and methods for representing abstract data types in a DuckDB database.</p>
+<p><code>dbverse</code> currently consists of four core libraries that contain classes, generics, and methods for representing and analyzing scientific data objects in a <code>DuckDB</code> database.</p>
 <ol>
-<li><a href="https://drieslab.github.io/dbMatrix">dbMatrix</a> - A database backend
-    for counts including sparse/dense matrices and data.frames.</li>
-<li><a href="https://drieslab.github.io/dbSpatial">dbSpatial</a> - A database backend
-    for geometries including geojson, shp, and more.</li>
-<li><a href="https://drieslab.github.io/dbData">dbData</a> - A lightweight package with
-    specifications for base class of <code>dbverse</code> core packages.</li>
+<li><a href="https://drieslab.github.io/dbMatrix"><code>{dbMatrix}</code></a> - A library for sparse/dense matrix operations in a database.</li>
+<li><a href="https://drieslab.github.io/dbSpatial"><code>{dbSpatial}</code></a> - A library for spatial operations in a database.</li>
+<li><code>{dbData}</code> - A library with specifications for base class of <code>dbverse</code>. <strong>In progress</strong>.</li>
+<li><code>{dbSequence}</code> - A library for genomic sequence operations in a database. <strong>In progress</strong>.</li>
 </ol>
 <h1 id="extensions">Extensions</h1>
-<p>Packages that use core packages.</p>
+<p>R Packages that use <code>dbverse</code>. <em>Want to be added to this list? Please submit an issue or pull request on our Github.</em></p>
 <ul>
 <li><a href="https://github.com/drieslab/Giotto">Giotto</a><ul>
 <li>A comprehensive spatial transcriptomic analysis toolbox.</li>
-<li>dbverse packages: <code>dbMatrix</code> and <code>dbSpatial</code></li>
 </ul>
 </li>
 </ul>

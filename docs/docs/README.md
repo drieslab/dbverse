@@ -1,32 +1,27 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# dbverse
+# `dbverse`
 
 <!-- badges: start -->
+
 [![Lifecycle:
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
+[![Contributor
+Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](conduct.md)
+
 <!-- badges: end -->
 
-The `dbverse` is a set of open-source and composable packages for
-larger-than-memory data analysis. The `dbverse` provides *object
-relational mappings* for common data objects, including sparse and dense
-matrices, spatial geometries, and others, and is powered by
-[DuckDB](https://duckdb.org/).
+**Note: work in progress**
 
-The goal of `dbverse` is to enable users to analyze larger-than-memory
-data objects using familiar coding syntax and methods provided by
-existing in-memory packages. Please visit the
-[**packages**](https://drieslab.github.io/dbverse/packages/) page for
-details about each `dbverse` package.
+The `dbverse` is an ecosystem of open-source and composable database
+libraries for larger-than-memory scientific data analysis. The `dbverse`
+provides object relational mappings for common scientific data objects,
+including sparse and dense matrices, spatial geometries, and others, and
+is powered by DuckDB.
 
-Note: the `dbverse` is currently under active development.
-
-## Installation
-
-You can install the development version of `dbverse` like so:
-
-``` r
-# install.packages("pak", repos = sprintf("https://r-lib.github.io/p/pak/stable/%s/%s/%s", .Platform$pkgType, R.Version()$os, R.Version()$arch))
-pak::pak("drieslab/dbverse")
-```
+The goal of `dbverse` is to enable larger-than-memory scientific data
+analysis across programming languages with databases. Please visit the
+packages page for details about each `dbverse` package. On release, the
+`dbverse` is compatible with R with support for other languages planned
+in the future.

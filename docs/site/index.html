@@ -344,17 +344,6 @@
         
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Home
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
       <a href="." class="md-nav__link md-nav__link--active">
         
   
@@ -364,32 +353,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#installation" class="md-nav__link">
-    Installation
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -510,28 +473,26 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-<h1 id="dbverse">dbverse</h1>
+<h1 id="dbverse"><code>dbverse</code></h1>
 <!-- badges: start -->
+
 <p><a href="https://lifecycle.r-lib.org/articles/stages.html#experimental"><img alt="Lifecycle:
-experimental" src="https://img.shields.io/badge/lifecycle-experimental-orange.svg" /></a></p>
+experimental" src="https://img.shields.io/badge/lifecycle-experimental-orange.svg" /></a>
+<a href="conduct/"><img alt="Contributor
+Covenant" src="https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg" /></a></p>
 <!-- badges: end -->
 
-<p>The <code>dbverse</code> is a set of open-source and composable packages for
-larger-than-memory data analysis. The <code>dbverse</code> provides <em>object
-relational mappings</em> for common data objects, including sparse and dense
-matrices, spatial geometries, and others, and is powered by
-<a href="https://duckdb.org/">DuckDB</a>.</p>
-<p>The goal of <code>dbverse</code> is to enable users to analyze larger-than-memory
-data objects using familiar coding syntax and methods provided by
-existing in-memory packages. Please visit the
-<a href="https://drieslab.github.io/dbverse/packages/"><strong>packages</strong></a> page for
-details about each <code>dbverse</code> package.</p>
-<p>Note: the <code>dbverse</code> is currently under active development.</p>
-<h2 id="installation">Installation</h2>
-<p>You can install the development version of <code>dbverse</code> like so:</p>
-<pre><code class="language-r"># install.packages(&quot;pak&quot;, repos = sprintf(&quot;https://r-lib.github.io/p/pak/stable/%s/%s/%s&quot;, .Platform$pkgType, R.Version()$os, R.Version()$arch))
-pak::pak(&quot;drieslab/dbverse&quot;)
-</code></pre>
+<p><strong>Note: work in progress</strong></p>
+<p>The <code>dbverse</code> is an ecosystem of open-source and composable database
+libraries for larger-than-memory scientific data analysis. The <code>dbverse</code>
+provides object relational mappings for common scientific data objects,
+including sparse and dense matrices, spatial geometries, and others, and
+is powered by DuckDB.</p>
+<p>The goal of <code>dbverse</code> is to enable larger-than-memory scientific data
+analysis across programming languages with databases. Please visit the
+packages page for details about each <code>dbverse</code> package. On release, the
+<code>dbverse</code> is compatible with R with support for other languages planned
+in the future.</p>
 
 
 
