@@ -12,7 +12,7 @@ Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](c
 
 <!-- badges: end -->
 
-**Note: work in progress **
+**Note: work in progress**
 
 The `dbverse` is an ecosystem of open-source and composable database
 libraries for larger-than-memory scientific data analysis. The `dbverse`

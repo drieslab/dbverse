@@ -260,7 +260,7 @@
 direction LR
 
 namespace Input_Data {
-    class numerical{
+    class matrices{
         .mtx
         .csv
         .parquet
@@ -309,8 +309,8 @@ namespace dbMatrix_lib {
         + dim_names: [enum,enum]
         + dims: [int, int]
         + class: "dbSparseMatrix" | "dbDenseMatrix"
-        - Arith
-        - Ops
+        - Arith()
+        - Ops() 
         - matrix summary functions()
     }
 }
@@ -340,7 +340,7 @@ namespace dbData_lib {
     }
 }
 
-numerical &lt;..&gt; dbMatrix_lib : read/write
+matrices &lt;..&gt; dbMatrix_lib : read/write
 geometries &lt;..&gt; dbSpatial_lib : read/write
 sequences &lt;..&gt; dbSequence_lib : read/write
 
