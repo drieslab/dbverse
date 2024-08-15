@@ -8,7 +8,7 @@ classDiagram
 direction LR
 
 namespace Input_Data {
-    class numerical{
+    class matrices{
         .mtx
         .csv
         .parquet
@@ -57,8 +57,8 @@ namespace dbMatrix_lib {
         + dim_names: [enum,enum]
         + dims: [int, int]
         + class: "dbSparseMatrix" | "dbDenseMatrix"
-        - Arith
-        - Ops
+        - Arith()
+        - Ops() 
         - matrix summary functions()
     }
 }
@@ -88,7 +88,7 @@ namespace dbData_lib {
     }
 }
 
-numerical <..> dbMatrix_lib : read/write
+matrices <..> dbMatrix_lib : read/write
 geometries <..> dbSpatial_lib : read/write
 sequences <..> dbSequence_lib : read/write
 
